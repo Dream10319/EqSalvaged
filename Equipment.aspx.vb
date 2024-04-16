@@ -8,7 +8,6 @@ Public Class Equipment
     End Sub
 
     Protected Sub CrossButton_Click(sender As Object, e As EventArgs)
-
         Dim dt As DataTable
         If ViewState("Data") IsNot Nothing Then
             dt = DirectCast(ViewState("Data"), DataTable)
@@ -37,7 +36,7 @@ Public Class Equipment
         ' Bind the DataTable to the GridView
         GridView1.DataSource = dt
         GridView1.DataBind()
-        Insert(InNumber.Text, txtdescrption.Text, txtMfg.Text, txtSeralNumber.Text, txtCode.Text)
+        Clear()
     End Sub
 
     Public Sub Insert(inv As String, desc As String, mfg As String, serial As String, loc As String)
@@ -55,5 +54,25 @@ Public Class Equipment
                 con.Close()
             End Using
         End Using
+    End Sub
+
+    Protected Sub Reset_Click(sender As Object, e As EventArgs)
+        GridView1.DataSource = Nothing
+        ViewState("Data") = Nothing
+        GridView1.DataBind()
+    End Sub
+
+    Protected Sub Submit_Click(sender As Object, e As EventArgs)
+        For Each row As GridViewRow In GridView1.Rows
+            Insert(row.Cells(0).Text, row.Cells(1).Text, row.Cells(2).Text, row.Cells(3).Text, row.Cells(4).Text)
+        Next
+    End Sub
+
+    Public Sub Clear()
+        InNumber.Text = ""
+        txtdescrption.Text = ""
+        txtMfg.Text = ""
+        txtSeralNumber.Text = ""
+        txtCode.Text = ""
     End Sub
 End Class

@@ -61,11 +61,6 @@
 
         #form1 {
             /* background: rgb(167, 208, 22, 0.5);*/
-            background: #FDBE11;
-            border:thick;
-            box-sizing: border-box;
-            box-shadow: 0 15px 25px rgba(0, 0, 0, .3);
-            border-radius: 10px;
         }
 
         .titles {
@@ -98,6 +93,11 @@
         .auto-style1 {
             padding-top:0px;
             margin-bottom: 1px;
+            background: #FDBE11;
+            border:thick;
+            box-sizing: border-box;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, .3);
+            border-radius: 10px;
         }
         
 
@@ -244,23 +244,23 @@
                       <asp:Table runat="server" >
                 <asp:TableRow>
                  <asp:TableCell CssClass="user-box" Width="118px">
-                          <asp:TextBox ID="InNumber" runat="server" Font-Names="" required=""></asp:TextBox>
+                          <asp:TextBox ID="InNumber" runat="server" Font-Names=""></asp:TextBox>
                               &nbsp;&nbsp;<label>Inv Number</label>
                           </asp:TableCell>
                     <asp:TableCell CssClass="user-box" Width="180px">
-                          <asp:TextBox ID="txtdescrption" runat="server" Font-Names="" required=""></asp:TextBox>
+                          <asp:TextBox ID="txtdescrption" runat="server" Font-Names=""></asp:TextBox>
                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Description</label>
                           </asp:TableCell>
                     <asp:TableCell CssClass="user-box" Width="118">
-                        <asp:TextBox ID="txtMfg" runat="server" Font-Names="" required=""></asp:TextBox>
+                        <asp:TextBox ID="txtMfg" runat="server" Font-Names=""></asp:TextBox>
                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Mfg.</label>
                        </asp:TableCell>
                     <asp:TableCell CssClass="user-box" Width="180">
-                        <asp:TextBox ID="txtSeralNumber" runat="server" Font-Names="" required=""></asp:TextBox>
+                        <asp:TextBox ID="txtSeralNumber" runat="server" Font-Names=""></asp:TextBox>
                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Seral Number</label>
                        </asp:TableCell>
                     <asp:TableCell CssClass="user-box" Width="110">
-                        <asp:TextBox ID="txtCode" runat="server" Font-Names="" required=""></asp:TextBox>
+                        <asp:TextBox ID="txtCode" runat="server" Font-Names=""></asp:TextBox>
                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>Loc.Code</label>
                        </asp:TableCell>
                     <%-- <asp:TableCell CssClass="lbl5" Width="40">
@@ -318,12 +318,11 @@
                  </asp:TableCell>
                </asp:TableRow>
            </asp:Table>
+         <div style="text-align:center">
+            <asp:Button runat="server" Text="Reset" CssClass="shadowbutton" OnClick="Reset_Click"/>
+            <asp:Button runat="server" Text="Submit" CssClass="shadowbutton" OnClick="Submit_Click"/>
+         </div>
     </form>
-    <div runat="server">
-        <button id="btnTestPage" class="shadowbutton">Reset Page</button>
-        <button id="" class="shadowbutton">Reset Page</button>
-        <button id="" class="shadowbutton">Reset Page</button>
-    </div>
       </body>
     
 
